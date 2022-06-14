@@ -1,0 +1,35 @@
+.body{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+    /* align-items: center; */
+}
+
+.side-bar{
+    position: fixed;
+    width: 20%;
+    min-height: 100%;
+    background-color: white;
+    margin-top: 0;
+    box-shadow: 0 2px 5px 7px #00000029;
+}
+
+.side-bar a{
+    display: block;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    cursor: pointer;
+    padding-top: 10%;
+    padding-left: 10%;
+    font-size: 20px;
+}
+
+.side-bar-products{
+    padding-top: 10%;
+    padding-left: 10%;
+    font-size: 30px;
+}
