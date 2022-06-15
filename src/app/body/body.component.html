@@ -7,12 +7,19 @@
         <a>Simple Tools (3)</a>
         <a>Complex Tools (5)</a>
     </div>
-    <div class="components">
+    <div class="components-header">
         <div class="products-sync">
             <p class="components-products">
                 Products
             </p>
             <button>Sync</button>
+        </div>
+    </div>
+    <div class="components" >
+        <div class="single-component" *ngFor="let item of items">
+            <img src={{item.imageUrl}} alt="item" width="100%">
+            <p>{{item.name}}</p>
+            <p>${{item.price}}</p>
         </div>
     </div>
 </div>
