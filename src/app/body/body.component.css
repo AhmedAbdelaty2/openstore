@@ -28,6 +28,10 @@
     font-size: 20px;
 }
 
+.side-bar a.active{
+    color: #2E8BC0;
+}
+
 .side-bar-products{
     padding-top: 10%;
     padding-left: 10%;
@@ -36,7 +40,6 @@
 
 .components{
     margin-left: 21.5%;
-    margin-top: 0.5rem;
 }
 
 .components-products{
@@ -54,7 +57,7 @@
 
 .components button{
     height: 40px;
-    margin-block-start: 1rem;
+    margin-block-start: 1.7rem;
     margin-inline-end: 2rem;
     padding: 0 3.5rem;
     font-size: 18px;
