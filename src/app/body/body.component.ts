@@ -37,13 +37,15 @@ export class BodyComponent implements OnInit {
       simples= items.length - complexes;
       localStorage.setItem("simples", JSON.stringify(simples))
       localStorage.setItem("complexes", JSON.stringify(complexes))
+      this.items = items;
     })    
   }
 
   syncOne(id:string){
-    console.log(id)
+    let updatedList = [];
     this.itemsService.getOneItem(id).subscribe((response)=>{
-      console.log(response);
+      this.items[parseInt(id)-1] = response;
+      localStorage.setItem('items',JSON.stringify(this.items))
     })
   }
 
