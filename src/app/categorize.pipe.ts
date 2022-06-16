@@ -10,7 +10,6 @@ export class CategorizePipe implements PipeTransform {
     if(!sel) return items;
     if(sel ==='all') return items;
     return !sel ? items : items.filter(function (sal: any) {
-      console.log(sal.category)
       return sal.category === sel
     });
   }

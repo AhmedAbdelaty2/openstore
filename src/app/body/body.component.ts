@@ -35,6 +35,8 @@ export class BodyComponent implements OnInit {
         }
       }
       simples= items.length - complexes;
+      this.complexes = complexes;
+      this.simples = simples;
       localStorage.setItem("simples", JSON.stringify(simples))
       localStorage.setItem("complexes", JSON.stringify(complexes))
       this.items = items;
@@ -42,9 +44,22 @@ export class BodyComponent implements OnInit {
   }
 
   syncOne(id:string){
-    let updatedList = [];
+    let complexes = 0
+    let simples = 0
     this.itemsService.getOneItem(id).subscribe((response)=>{
-      this.items[parseInt(id)-1] = response;
+      if(response){
+        this.items[parseInt(id)-1] = response;
+        for (let i = 0; i < this.items.length; i++) {
+          if(this.items[i].category==="complex"){
+            complexes++;
+          }
+        }
+        simples= this.items.length - complexes;
+        this.complexes = complexes;
+        this.simples = simples;
+        localStorage.setItem("simples", JSON.stringify(this.simples))
+        localStorage.setItem("complexes", JSON.stringify(complexes))
+      }
       localStorage.setItem('items',JSON.stringify(this.items))
     })
   }
