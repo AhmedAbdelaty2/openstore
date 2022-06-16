@@ -8,7 +8,11 @@ import { ItemsService } from '../items.service';
 })
 export class BodyComponent implements OnInit {
 
-  items: any = []
+  items: any = [];
+  categories = ['all', 'simple', 'complex'];
+  query:string = "";
+  simples = 0;
+  complexes = 0;
 
   constructor(private itemsService: ItemsService) { }
 
@@ -16,7 +20,18 @@ export class BodyComponent implements OnInit {
     this.itemsService.allItems().subscribe((response)=>{
       this.items.push(...response)
       console.log(this.items)
-    })
+    })   
+
+    console.log('complex = '+this.complexes)
   }
 
+  changeCategory(category:string){
+    this.query = category;
+    document.getElementById(category.toString())?.classList.add('active')
+    for (let i = 0; i <= this.categories.length ; i++) {
+      if(this.categories[i] !== category){
+        document.getElementById(this.categories[i])?.classList.remove('active')
+      }
+    }
+  }
 }

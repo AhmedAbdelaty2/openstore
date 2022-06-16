@@ -3,9 +3,9 @@
         <div class="side-bar-products">
             Products
         </div>
-        <a class="active">All (8)</a>
-        <a>Simple Tools (3)</a>
-        <a>Complex Tools (5)</a>
+        <a id="all" (click)="changeCategory('all')" class="active">All ({{items.length}})</a>
+        <a id="simple" (click)="changeCategory('simple')">Simple Tools (3)</a>
+        <a id="complex" (click)="changeCategory('complex')">Complex Tools (5)</a>
     </div>
     <div class="components-header">
         <div class="products-sync">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="components" >
-        <div class="single-component" *ngFor="let item of items">
+        <div class="single-component" *ngFor="let item of items|categorize:query">
             <!-- <img src={{item.imageUrl}} alt="item" width="100%"> -->
             <div class="img" style="background-image: url({{item.imageUrl}}); width: 100%;">
                 <button>Sync</button>

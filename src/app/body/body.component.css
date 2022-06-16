@@ -66,14 +66,15 @@
     text-decoration: none;
     outline: none;
     color: #fff;
-    background-color: #FFB52E;
+    /* background-color: #FFB52E; */
+    background-color: #ffce2e;
     border: none;
     border-radius: 5px;
     /* box-shadow: 0 9px #999; */
 }
 
 .components-header button:hover{
-    background-color: #FFC55C;
+    opacity: 0.8;
 }
 
 .components{
@@ -115,8 +116,8 @@
 
 .img button{
     float: right;
-    margin: 2%;
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    margin: 4%;
+    padding: 0.6rem 1rem 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
