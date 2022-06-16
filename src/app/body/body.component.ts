@@ -17,14 +17,26 @@ export class BodyComponent implements OnInit {
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
+    this.items =JSON.parse(localStorage.getItem('items') || '{}')
+    this.simples =JSON.parse(localStorage.getItem('simples') || '{}')
+    this.complexes = JSON.parse(localStorage.getItem('complexes') || '{}')
+  }
+
+  syncAll(){
     this.itemsService.allItems().subscribe((response)=>{
-      this.items.push(...response)
+      let complexes = 0
+      let simples = 0
+      let items = [];
+      items.push(...response)
+      localStorage.setItem("items", JSON.stringify(items))
       for (let i = 0; i < this.items.length; i++) {
         if(this.items[i].category==="complex"){
-          this.complexes++;
+          complexes++;
         }
       }
-      this.simples= this.items.length - this.complexes;
+      simples= items.length - complexes;
+      localStorage.setItem("simples", JSON.stringify(simples))
+      localStorage.setItem("complexes", JSON.stringify(complexes))
     })    
   }
 
@@ -38,3 +50,8 @@ export class BodyComponent implements OnInit {
     }
   }
 }
+
+
+// localStorage.setItem("items", JSON.stringify(this.items));
+      // let one =JSON.parse(localStorage.getItem('items') || '{}')
+      // console.log(one)
