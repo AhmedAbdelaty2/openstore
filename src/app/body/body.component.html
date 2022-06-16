@@ -17,7 +17,10 @@
     </div>
     <div class="components" >
         <div class="single-component" *ngFor="let item of items">
-            <img src={{item.imageUrl}} alt="item" width="100%">
+            <!-- <img src={{item.imageUrl}} alt="item" width="100%"> -->
+            <div class="img" style="background-image: url({{item.imageUrl}}); width: 100%;">
+                <button>Sync</button>
+            </div>
             <p>{{item.name}}</p>
             <p>${{item.price}}</p>
         </div>
