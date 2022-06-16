@@ -50,8 +50,3 @@ export class BodyComponent implements OnInit {
     }
   }
 }
-
-
-// localStorage.setItem("items", JSON.stringify(this.items));
-      // let one =JSON.parse(localStorage.getItem('items') || '{}')
-      // console.log(one)
