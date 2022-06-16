@@ -4,8 +4,8 @@
             Products
         </div>
         <a id="all" (click)="changeCategory('all')" class="active">All ({{items.length}})</a>
-        <a id="simple" (click)="changeCategory('simple')">Simple Tools (3)</a>
-        <a id="complex" (click)="changeCategory('complex')">Complex Tools (5)</a>
+        <a id="simple" (click)="changeCategory('simple')">Simple Tools ({{simples}})</a>
+        <a id="complex" (click)="changeCategory('complex')">Complex Tools ({{complexes}})</a>
     </div>
     <div class="components-header">
         <div class="products-sync">

@@ -19,10 +19,13 @@ export class BodyComponent implements OnInit {
   ngOnInit(): void {
     this.itemsService.allItems().subscribe((response)=>{
       this.items.push(...response)
-      console.log(this.items)
-    })   
-
-    console.log('complex = '+this.complexes)
+      for (let i = 0; i < this.items.length; i++) {
+        if(this.items[i].category==="complex"){
+          this.complexes++;
+        }
+      }
+      this.simples= this.items.length - this.complexes;
+    })    
   }
 
   changeCategory(category:string){
