@@ -23,7 +23,7 @@ export class BodyComponent implements OnInit {
   }
 
   syncAll(){
-    this.itemsService.allItems().subscribe((response)=>{
+    this.itemsService.getAllItems().subscribe((response)=>{
       let complexes = 0
       let simples = 0
       let items = [];
@@ -38,6 +38,13 @@ export class BodyComponent implements OnInit {
       localStorage.setItem("simples", JSON.stringify(simples))
       localStorage.setItem("complexes", JSON.stringify(complexes))
     })    
+  }
+
+  syncOne(id:string){
+    console.log(id)
+    this.itemsService.getOneItem(id).subscribe((response)=>{
+      console.log(response);
+    })
   }
 
   changeCategory(category:string){
