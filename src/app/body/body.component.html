@@ -17,7 +17,6 @@
     </div>
     <div class="components" >
         <div class="single-component" *ngFor="let item of items|categorize:query">
-            <!-- <img src={{item.imageUrl}} alt="item" width="100%"> -->
             <div class="img" style="background-image: url({{item.imageUrl}}); width: 100%;">
                 <button (click)="syncOne(item.id)">Sync</button>
             </div>
