@@ -18,8 +18,8 @@ export class BodyComponent implements OnInit {
 
   ngOnInit(): void {
     this.items =JSON.parse(localStorage.getItem('items') || '{}')
-    this.simples =JSON.parse(localStorage.getItem('simples') || '{}')
-    this.complexes = JSON.parse(localStorage.getItem('complexes') || '{}')
+    this.simples =JSON.parse(localStorage.getItem('simples') || '0')
+    this.complexes = JSON.parse(localStorage.getItem('complexes') || '0')
   }
 
   syncAll(){
@@ -29,8 +29,8 @@ export class BodyComponent implements OnInit {
       let items = [];
       items.push(...response)
       localStorage.setItem("items", JSON.stringify(items))
-      for (let i = 0; i < this.items.length; i++) {
-        if(this.items[i].category==="complex"){
+      for (let i = 0; i < items.length; i++) {
+        if(items[i].category==="complex"){
           complexes++;
         }
       }
