@@ -9,4 +9,4 @@ this project has been made with Angular framework and without any CSS frameworks
 ### `tip`
 - when hitting https://captello.firebaseio.com/products/1.json it gets me the data of the item with id = 2 and that also happens with all items, so I took a benefit of it to make sure that the data changes 
 
-[gif](./sample.gif)
+![gif](./sample.gif)
