@@ -17,9 +17,9 @@ export class BodyComponent implements OnInit {
   constructor(private itemsService: ItemsService) { }
 
   ngOnInit(): void {
-    this.items =JSON.parse(localStorage.getItem('items') || '{}')
-    this.simples =JSON.parse(localStorage.getItem('simples') || '0')
-    this.complexes = JSON.parse(localStorage.getItem('complexes') || '0')
+    this.items =JSON.parse(localStorage.getItem('items') || '')
+    this.simples =JSON.parse(localStorage.getItem('simples') || '')
+    this.complexes = JSON.parse(localStorage.getItem('complexes') || '')
   }
 
   syncAll(){
